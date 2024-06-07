@@ -61,7 +61,7 @@ const Payment = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/v1/payment/process",
+        "https://shopkart-d719.onrender.com/api/v1/payment/process",
         paymentData,
         config
       );
