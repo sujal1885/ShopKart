@@ -5,6 +5,7 @@ import {Navigate,Route,Routes,Outlet} from "react-router-dom";
 const ProtectedRoute = ({isAdmin}) => {
   
     const {loading,isAuthenticated ,user} = useSelector((state) => state.user);
+    console.log(user);
 
     console.log('isAdmin',isAdmin);
 
