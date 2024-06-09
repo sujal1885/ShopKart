@@ -48,7 +48,7 @@ export const myOrders = () => async (dispatch) => {
     try {
       dispatch({ type: MY_ORDERS_REQUEST });
   
-      const { data } = await axios.get("https://shopkart-d719.onrender.com/api/v1/orders/me");
+      const { data } = await axios.get("https://shopkart-d719.onrender.com/api/v1/orders/me",{ withCredentials: true });
   
       dispatch({ type: MY_ORDERS_SUCCESS, payload: data.order });
     } catch (error) {
