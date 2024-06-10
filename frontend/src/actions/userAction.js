@@ -48,7 +48,8 @@ export const login = (email, password) => async (dispatch) => {
     const { data } = await axios.post(
       `https://shopkart-d719.onrender.com/api/v1/login`,
       { email, password },
-      config
+      config,
+      { withCredentials: true }
     );
 
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
@@ -64,7 +65,7 @@ export const register = (userData) => async (dispatch) => {
 
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
-    const { data } = await axios.post(`https://shopkart-d719.onrender.com/api/v1/register`, userData, config);
+    const { data } = await axios.post(`https://shopkart-d719.onrender.com/api/v1/register`, userData, config,{ withCredentials: true });
 
     dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
   } catch (error) {
